@@ -1,25 +1,26 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "tipe": "module",
   "description": "hexlet first project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pollyleyka/frontend-project-lvl1.git"
   },
-    "bin": {
-  "brain-games": "bin/brain-games.js"
-},
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "polina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pollyleyka/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/pollyleyka/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/pollyleyka/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
-
-
