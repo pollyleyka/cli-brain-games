@@ -9,3 +9,6 @@ publish:
 
 cli:
 	node src/cli.js
+
+lint:
+	npx eslint .
