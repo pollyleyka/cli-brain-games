@@ -1,19 +1,15 @@
 import readlineSync from 'readline-sync';
-const getRndInteger = (min = 0, max = 100) => {
-  const result = Math.floor(Math.random() * (max - min)) + min;
-  return result;
-};
 
-
-export default (gameRules) => {
+export default (gameRules, getExpression, getExpectedAnswer) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameRules);
 
   for (let i = 0; i < 3; i += 1) {
-    const message = getRndExpression();
-    const expectedAnswer = GetExpectedAnswer(message);
+    const message = getExpression();
+    const expectedAnswer = getExpectedAnswer(message);
+
     console.log(`Question: ${message}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== expectedAnswer) {
