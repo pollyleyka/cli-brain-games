@@ -2,4 +2,4 @@
 
 import calkGame from '../games/calkGame.js';
 
-calkGame(1 + 1);
+calkGame();

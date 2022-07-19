@@ -8,3 +8,8 @@ https://asciinema.org/a/508278
 
 brain-calk 
 https://asciinema.org/a/509424
+
+brain-gcd
+https://asciinema.org/a/509604
+
+// cd ~/Desktop/HTML/frontend-project-lvl1 make brain-gcd

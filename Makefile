@@ -18,3 +18,6 @@ brain-even:
 
 brain-calk:
 	node bin/brain-calk.js
+
+brain-gcd:
+	node bin/brain-gcd.js
