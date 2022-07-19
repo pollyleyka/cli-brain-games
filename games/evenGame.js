@@ -2,18 +2,18 @@ import gamesLogic from '../src/index.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getRndInteger = (min = 0, max = 100) => {
-  const result = Math.floor(Math.random() * (max - min)) + min;
-  return result;
-};
+const getGameData = () => {
+  const expression = Math.floor(Math.random() * (100 - 0)) + 0;
 
-const getExpectedAnswer = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
+  let expectedAnswer;
+  if (expression % 2 === 0) {
+    expectedAnswer = 'yes';
+  } else {
+    expectedAnswer = 'no';
   }
-  return 'no';
+  return [expression, expectedAnswer];
 };
 
 export default () => {
-  gamesLogic(gameRules, getRndInteger, getExpectedAnswer);
+  gamesLogic(gameRules, getGameData);
 };

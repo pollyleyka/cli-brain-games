@@ -2,29 +2,27 @@ import gamesLogic from '../src/index.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const getExpression = () => {
+const getGameData = () => {
   const getRndInteger = (min = 0, max = 100) => {
-    const result = Math.floor(Math.random() * (max - min)) + min;
-    return result;
+    const rndNum = Math.floor(Math.random() * (max - min)) + min;
+    return rndNum;
   };
-  const operations = ['+', '-', '*'];
-  const result = `${getRndInteger()} ${operations[getRndInteger(0, 3)]} ${getRndInteger()}`;
-  return result;
-};
 
-const getExpectedAnswer = (expression) => {
-  const exprassionArray = expression.split(' ');
-  let result = '';
-  if (exprassionArray.includes('+')) {
-    result += (Number(exprassionArray[0]) + Number(exprassionArray[2]));
-  } else if (exprassionArray.includes('-')) {
-    result += (Number(exprassionArray[0]) - Number(exprassionArray[2]));
-  } else if (exprassionArray.includes('*')) {
-    result += (Number(exprassionArray[0]) * Number(exprassionArray[2]));
+  const operations = ['+', '-', '*'];
+  const expression = `${getRndInteger()} ${operations[getRndInteger(0, 3)]} ${getRndInteger()}`;
+
+  const expressionArray = expression.split(' ');
+  let expectedAnswer = '';
+  if (expressionArray.includes('+')) {
+    expectedAnswer += (Number(expressionArray[0]) + Number(expressionArray[2]));
+  } else if (expressionArray.includes('-')) {
+    expectedAnswer += (Number(expressionArray[0]) - Number(expressionArray[2]));
+  } else if (expressionArray.includes('*')) {
+    expectedAnswer += (Number(expressionArray[0]) * Number(expressionArray[2]));
   }
-  return result;
+  return [expression, expectedAnswer];
 };
 
 export default () => {
-  gamesLogic(gameRules, getExpression, getExpectedAnswer);
+  gamesLogic(gameRules, getGameData);
 };

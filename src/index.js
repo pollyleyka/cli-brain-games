@@ -1,14 +1,13 @@
 import readlineSync from 'readline-sync';
 
-export default (gameRules, getExpression, getExpectedAnswer) => {
+export default (gameRules, gameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameRules);
 
   for (let i = 0; i < 3; i += 1) {
-    const message = getExpression();
-    const expectedAnswer = getExpectedAnswer(message);
+    const [message, expectedAnswer] = gameData();
 
     console.log(`Question: ${message}`);
     const userAnswer = readlineSync.question('Your answer: ');
