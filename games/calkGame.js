@@ -1,20 +1,22 @@
 import gamesLogic from '../src/index.js';
-import getRndInteger from '../src/rndInt.js';
+import getRndInteger from '../src/helper.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const getGameData = () => {
-  const operations = ['+', '-', '*'];
-  const expression = `${getRndInteger()} ${operations[getRndInteger(0, 3)]} ${getRndInteger()}`;
+  const operators = ['+', '-', '*'];
+  const expression = `${getRndInteger()} ${operators[getRndInteger(0, 3)]} ${getRndInteger()}`;
 
-  const expressionArray = expression.split(' ');
+  const coll = expression.split(' ');
+  const a = Number(coll[0]);
+  const b = Number(coll[2]);
   let expectedAnswer = '';
-  if (expressionArray.includes('+')) {
-    expectedAnswer += (Number(expressionArray[0]) + Number(expressionArray[2]));
-  } else if (expressionArray.includes('-')) {
-    expectedAnswer += (Number(expressionArray[0]) - Number(expressionArray[2]));
-  } else if (expressionArray.includes('*')) {
-    expectedAnswer += (Number(expressionArray[0]) * Number(expressionArray[2]));
+  if (coll.includes('+')) {
+    expectedAnswer += (a + b);
+  } else if (coll.includes('-')) {
+    expectedAnswer += (a - b);
+  } else {
+    expectedAnswer += (a * b);
   }
   return [expression, expectedAnswer];
 };

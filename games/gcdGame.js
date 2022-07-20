@@ -1,17 +1,17 @@
 import gamesLogic from '../src/index.js';
-import getRndInteger from '../src/rndInt.js';
+import getRndInteger from '../src/helper.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const getGameData = () => {
-  const expression = `${getRndInteger()} ${getRndInteger()}`;
+  const twoNumbers = `${getRndInteger(0, 19)} ${getRndInteger(0, 10)}`;
 
-  const [aString, bString] = expression.split(' ');
-  let a = Number(aString);
-  let b = Number(bString);
-  let expectedAnswer = 0;
+  const coll = twoNumbers.split(' ');
+  let a = Number(coll[0]);
+  let b = Number(coll[1]);
+  let expectedAnswer;
   if (a === b) {
-    return `${a}`;
+    expectedAnswer = `${a}`;
   }
   while (a !== 0 && b !== 0) {
     if (a > b) {
@@ -20,8 +20,9 @@ const getGameData = () => {
       b %= a;
     }
   }
-  expectedAnswer += (a + b);
-  return [expression, `${expectedAnswer}`];
+  expectedAnswer = (a + b);
+  expectedAnswer = expectedAnswer.toString();
+  return [twoNumbers, expectedAnswer];
 };
 
 export default () => {

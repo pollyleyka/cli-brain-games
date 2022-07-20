@@ -1,5 +1,5 @@
 import gamesLogic from '../src/index.js';
-import getRndInteger from '../src/rndInt.js';
+import getRndInteger from '../src/helper.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
