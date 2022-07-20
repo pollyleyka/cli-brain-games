@@ -12,4 +12,10 @@ https://asciinema.org/a/509424
 brain-gcd
 https://asciinema.org/a/509604
 
+brain-progression
+https://asciinema.org/a/509776
+
+brain-prime
+https://asciinema.org/a/509773
+
 // cd ~/Desktop/HTML/frontend-project-lvl1 make brain-gcd

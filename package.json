@@ -16,7 +16,8 @@
     "brain-even": "bin/brain-even.js",
     "brain-calk": "bin/brain-calk.js",
     "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-progression.js"
+    "brain-progression": "bin/brain-progression.js",
+    "prime-gcd": "bin/brain-prime.js"
   },
   "author": "polina",
   "license": "ISC",
