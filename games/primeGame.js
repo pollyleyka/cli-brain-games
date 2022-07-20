@@ -1,12 +1,13 @@
 import gamesLogic from '../src/index.js';
+import getRndInteger from '../src/rndInt.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getGameData = (n = 100) => {
-  const expression = Math.floor(Math.random() * (n - 0)) + 0;
+const getGameData = () => {
+  const expression = getRndInteger();
 
   const array = [];
-  const limit = n;
+  const limit = 100;
   const primeNumbers = [];
 
   for (let i = 2; i < limit; i += 1) {

@@ -1,13 +1,9 @@
 import gamesLogic from '../src/index.js';
+import getRndInteger from '../src/rndInt.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const getGameData = () => {
-  const getRndInteger = (min = 0, max = 100) => {
-    const rndNum = Math.floor(Math.random() * (max - min)) + min;
-    return rndNum;
-  };
-
   const operations = ['+', '-', '*'];
   const expression = `${getRndInteger()} ${operations[getRndInteger(0, 3)]} ${getRndInteger()}`;
 

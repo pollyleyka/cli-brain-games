@@ -1,12 +1,9 @@
 import gamesLogic from '../src/index.js';
+import getRndInteger from '../src/rndInt.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const getGameData = () => {
-  const getRndInteger = (min = 1, max = 100) => {
-    const result = Math.floor(Math.random() * (max - min)) + min;
-    return result;
-  };
   const expression = `${getRndInteger()} ${getRndInteger()}`;
 
   const [aString, bString] = expression.split(' ');

@@ -1,34 +1,20 @@
 import gamesLogic from '../src/index.js';
+import getRndInteger from '../src/rndInt.js';
 
 const gameRules = 'What number is missing in the progression?';
-// const getProgression = () => {
-//   const n = getRndInteger(5, 10);
-//   const d = getRndInteger(1, 10);
-//   const start = getRndInteger(1, 20);
-//   const progression = [start];
-//   for (let i = 1; i < n; i += 1) {
-//     progression[i] = progression[i - 1] + d;
-//   }
-//   return progression;
-// };
 
 const getGameData = () => {
-  const getRndInteger = (min = 1, max = 100) => {
-    const result = Math.floor(Math.random() * (max - min)) + min;
-    return result;
-  };
-
-  const n = getRndInteger(5, 10);
-  const d = getRndInteger(1, 10);
+  const progressionLength = getRndInteger(5, 10);
+  const progressionValue = getRndInteger(1, 10);
   const start = getRndInteger(1, 20);
   const progression = [start];
-  for (let i = 1; i < n; i += 1) {
-    progression[i] = progression[i - 1] + d;
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression[i] = progression[i - 1] + progressionValue;
   }
 
-  const i = getRndInteger(0, progression.length);
-  const expectedAnswer = `${progression[i]}`;
-  progression[i] = '...';
+  const emptyPlace = getRndInteger(0, progression.length);
+  const expectedAnswer = `${progression[emptyPlace]}`;
+  progression[emptyPlace] = '...';
   return [progression, expectedAnswer];
 };
 
