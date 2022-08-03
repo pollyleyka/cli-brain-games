@@ -1,9 +1,5 @@
 import getGameLogic from '../index.js';
-
-const getRndInteger = (min = 0, max = 100) => {
-  const rndNum = Math.floor(Math.random() * (max - min)) + min;
-  return rndNum;
-};
+import getRndInteger from '../helper.js';
 
 const gameRules = 'What is the result of the expression?';
 

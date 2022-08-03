@@ -1,9 +1,5 @@
 import gamesLogic from '../index.js';
-
-const getRndInteger = (min = 0, max = 100) => {
-  const rndNum = Math.floor(Math.random() * (max - min)) + min;
-  return rndNum;
-};
+import getRndInteger from '../helper.js';
 
 const gameRules = 'What number is missing in the progression?';
 
