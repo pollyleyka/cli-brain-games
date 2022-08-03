@@ -25,7 +25,7 @@ cd frontend-project-lvl1
 ```
 3. Install packages:
 ```
-install
+make install
 ```
 
 
@@ -42,7 +42,7 @@ To start the game type:
 ```
 make brain-calc
 ```
-[![asciicast](https://asciinema.org/a/509424.svg)](https://asciinema.org/a/509424)
+
 
 ### 3. Brain gcd.
 To start the game type:
@@ -54,13 +54,13 @@ make brain-gcd
 ### 4. Brain progression.
 To start the game type:
 ```
-brain-progression
+make brain-progression
 ```
 [![asciicast](https://asciinema.org/a/509776.svg)](https://asciinema.org/a/509776)
 
 ### 5. Brain prime.
 To start the game type:
 ```
-brain-prime
+make brain-prime
 ```
 [![asciicast](https://asciinema.org/a/509773.svg)](https://asciinema.org/a/509773)

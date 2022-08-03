@@ -1,5 +1,5 @@
-import gamesLogic from '../src/index.js';
-import getRndInteger from '../src/helper.js';
+import gamesLogic from '../index.js';
+import getRndInteger from '../helper.js';
 
 const gameRules = 'What is the result of the expression?';
 
