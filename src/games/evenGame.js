@@ -1,4 +1,4 @@
-import gamesLogic from '../index.js';
+import getGameLogic from '../index.js';
 import getRndInteger from '../helper.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -16,5 +16,5 @@ const getGameData = () => {
 };
 
 export default () => {
-  gamesLogic(gameRules, getGameData);
+  getGameLogic(gameRules, getGameData);
 };
