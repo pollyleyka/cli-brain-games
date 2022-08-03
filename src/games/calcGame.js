@@ -5,7 +5,7 @@ const gameRules = 'What is the result of the expression?';
 
 const getGameData = () => {
   const operators = ['+', '-', '*'];
-  const expression = `${getRndInteger()} ${operators[getRndInteger(0, 3)]} ${getRndInteger()}`;
+  const expression = `${getRndInteger(1, 10)} ${operators[getRndInteger(0, 3)]} ${getRndInteger(1, 10)}`;
 
   const coll = expression.split(' ');
   const a = Number(coll[0]);
