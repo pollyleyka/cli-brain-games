@@ -14,8 +14,9 @@ const getGameData = () => {
 
   const emptyPlace = getRndInteger(0, progression.length);
   const expectedAnswer = `${progression[emptyPlace]}`;
-  progression[emptyPlace] = '...';
-  return [progression, expectedAnswer];
+  progression[emptyPlace] = '..';
+  const expression = progression.join(' ');
+  return [expression, expectedAnswer];
 };
 
 export default () => {
