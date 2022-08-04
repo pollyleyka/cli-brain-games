@@ -25,7 +25,7 @@ cd frontend-project-lvl1
 ```
 3. Install packages:
 ```
-make install
+npm install
 ```
 
 
@@ -42,7 +42,7 @@ To start the game type:
 ```
 make brain-calc
 ```
-
+[![asciicast](https://asciinema.org/a/512609.svg)](https://asciinema.org/a/512609)
 
 ### 3. Brain gcd.
 To start the game type:
