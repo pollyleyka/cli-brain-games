@@ -1,17 +1,15 @@
-import gamesLogic from '../index.js';
-import getRndInteger from '../helper.js';
+import getGameLogic from '../index.js';
+import getRandomNumber from '../helper.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
-const getGameData = () => {
-  const twoNumbers = `${getRndInteger(0, 19)} ${getRndInteger(0, 10)}`;
-
-  const coll = twoNumbers.split(' ');
-  let a = Number(coll[0]);
-  let b = Number(coll[1]);
-  let expectedAnswer;
+const getGreatestCommonDivisor = (twoNumbers) => {
+  const twoNumbersSymbols = twoNumbers.split(' ');
+  let a = Number(twoNumbersSymbols[0]);
+  let b = Number(twoNumbersSymbols[1]);
+  let greatestCommonDivisor;
   if (a === b) {
-    expectedAnswer = `${a}`;
+    greatestCommonDivisor = `${a}`;
   }
   while (a !== 0 && b !== 0) {
     if (a > b) {
@@ -20,11 +18,17 @@ const getGameData = () => {
       b %= a;
     }
   }
-  expectedAnswer = (a + b);
-  expectedAnswer = expectedAnswer.toString();
-  return [twoNumbers, expectedAnswer];
+  greatestCommonDivisor = (a + b);
+  greatestCommonDivisor = greatestCommonDivisor.toString();
+  return greatestCommonDivisor;
+};
+
+const getGcdGameData = () => {
+  const expression = `${getRandomNumber(0, 10)} ${getRandomNumber(0, 10)}`;
+  const expectedAnswer = getGreatestCommonDivisor(expression);
+  return [expression, expectedAnswer];
 };
 
 export default () => {
-  gamesLogic(gameRules, getGameData);
+  getGameLogic(gameRules, getGcdGameData);
 };
