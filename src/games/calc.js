@@ -26,7 +26,7 @@ const generateRound = () => {
   const firstNumber = getRandomNumber(1, 10);
   const secondNumber = getRandomNumber(1, 10);
   const operator = operators[getRandomNumber(0, 3)];
-  const question = `${firstNumber} + ${operator} + ${secondNumber}`;
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
   const expectedAnswer = calculate(firstNumber, operator, secondNumber);
   return [question, expectedAnswer];
 };
