@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getGcdGame from '../src/games/gcdGame.js';
+import runGcd from '../src/games/gcd.js';
 
-getGcdGame();
+runGcd();
