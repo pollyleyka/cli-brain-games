@@ -8,14 +8,16 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   if (firstNumber === secondNumber) {
     greatestCommonDivisor = `${firstNumber}`;
   }
-  while (firstNumber !== 0 && secondNumber !== 0) {
-    if (firstNumber > secondNumber) {
-      firstNumber %= secondNumber;
+  let a = firstNumber;
+  let b = secondNumber;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
     } else {
-      secondNumber %= firstNumber;
+      b %= a;
     }
   }
-  greatestCommonDivisor = (firstNumber + secondNumber);
+  greatestCommonDivisor = (a + b);
   greatestCommonDivisor = greatestCommonDivisor.toString();
   return greatestCommonDivisor;
 };
