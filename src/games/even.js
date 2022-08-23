@@ -1,4 +1,4 @@
-import getСompetition from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../helper.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -18,5 +18,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  getСompetition(description, generateRound);
+  run(description, generateRound);
 };

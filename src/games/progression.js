@@ -1,4 +1,4 @@
-import getСompetition from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../helper.js';
 
 const description = 'What number is missing in the progression?';
@@ -24,5 +24,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  getСompetition(description, generateRound);
+  run(description, generateRound);
 };

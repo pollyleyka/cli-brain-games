@@ -1,4 +1,4 @@
-import getСompetition from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../helper.js';
 
 const description = 'What is the result of the expression?';
@@ -32,5 +32,5 @@ const generateRound = () => {
 };
 
 export default () => {
-  getСompetition(description, generateRound);
+  run(description, generateRound);
 };
