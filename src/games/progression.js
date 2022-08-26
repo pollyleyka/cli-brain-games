@@ -1,12 +1,21 @@
 import run from '../index.js';
-import getRandomNumber from '../helper.js';
+import {
+  getRandomNumber,
+  getRandomIndex,
+} from '../helpers.js';
 
 const description = 'What number is missing in the progression?';
+const minLength = 5;
+const maxLength = 10;
+const minStep = 1;
+const maxStep = 10;
+const minRange = 1;
+const maxRange = 20;
 
-const getProgression = () => {
-  const expressionLength = getRandomNumber(5, 10);
-  const difference = getRandomNumber(1, 10);
-  const expressionStart = getRandomNumber(1, 20);
+const createProgression = () => {
+  const expressionLength = getRandomNumber(minLength, maxLength);
+  const difference = getRandomNumber(minStep, maxStep);
+  const expressionStart = getRandomNumber(minRange, maxRange);
   const progressions = [expressionStart];
   for (let i = 1; i < expressionLength; i += 1) {
     progressions[i] = progressions[i - 1] + difference;
@@ -15,11 +24,13 @@ const getProgression = () => {
 };
 
 const generateRound = () => {
-  const progressions = getProgression();
-  const emptyPlace = getRandomNumber(0, progressions.length);
-  const expectedAnswer = `${progressions[emptyPlace]}`;
+  const progressions = createProgression();
+  const emptyPlace = getRandomIndex(progressions);
+  const number = progressions[emptyPlace];
   progressions[emptyPlace] = '..';
+  const expectedAnswer = String(number);
   const question = progressions.join(' ');
+
   return [question, expectedAnswer];
 };
 

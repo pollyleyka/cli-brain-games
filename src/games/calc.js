@@ -1,33 +1,34 @@
 import run from '../index.js';
-import getRandomNumber from '../helper.js';
+import {
+  getRandomNumber,
+  getRandomIndex,
+} from '../helpers.js';
 
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
+const minRange = 1;
+const maxRange = 10;
 
-const calculate = (firstNumber, operator, secondNumber) => {
-  let calculated = '';
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
-      calculated += (firstNumber + secondNumber);
-      break;
+      return x + y;
     case '-':
-      calculated += (firstNumber - secondNumber);
-      break;
+      return x - y;
     case '*':
-      calculated += (firstNumber * secondNumber);
-      break;
+      return x * y;
     default:
       throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return calculated;
 };
 
 const generateRound = () => {
-  const firstNumber = getRandomNumber(1, 10);
-  const secondNumber = getRandomNumber(1, 10);
-  const operator = operators[getRandomNumber(0, 3)];
-  const question = `${firstNumber} ${operator} ${secondNumber}`;
-  const expectedAnswer = calculate(firstNumber, operator, secondNumber);
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const index = getRandomIndex(operators);
+  const operator = operators[index];
+  const question = `${number1} ${operator} ${number2}`;
+  const expectedAnswer = String(calculate(number1, number2, operator));
   return [question, expectedAnswer];
 };
 
