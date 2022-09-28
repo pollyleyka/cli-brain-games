@@ -6,19 +6,10 @@ const minRange = 1;
 const maxRange = 10;
 
 const getGcd = (x, y) => {
-  if (x === y) {
+  if (y === 0) {
     return x;
   }
-  let a = x;
-  let b = y;
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
-    } else {
-      b %= a;
-    }
-  }
-  return a + b;
+  return getGcd(y, x % y);
 };
 
 const generateRound = () => {

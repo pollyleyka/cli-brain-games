@@ -9,7 +9,8 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  for (let i = 2; i <= number / 2; i += 1) {
+  const sqrt = Math.sqrt(number);
+  for (let i = 2; i <= sqrt; i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -18,7 +19,7 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  const number = getRandomNumber((minRange, maxRange));
+  const number = getRandomNumber(minRange, maxRange);
   const expectedAnswer = isPrime(number) ? 'yes' : 'no';
   const question = String(number);
   return [question, expectedAnswer];
