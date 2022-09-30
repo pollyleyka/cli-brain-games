@@ -25,9 +25,9 @@ const createProgression = () => {
 
 const generateRound = () => {
   const progressions = createProgression();
-  const emptyPlace = getRandomIndex(progressions);
-  const number = progressions[emptyPlace];
-  progressions[emptyPlace] = '..';
+  const emptyPlaceIndex = getRandomIndex(progressions);
+  const number = progressions[emptyPlaceIndex];
+  progressions[emptyPlaceIndex] = '..';
   const expectedAnswer = String(number);
   const question = progressions.join(' ');
 
