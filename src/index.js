@@ -16,10 +16,9 @@ export default (description, generateRound) => {
     if (userAnswer !== expectedAnswer) {
       console.log(`${userAnswer} is wrong answer;(. Correct answer was ${expectedAnswer}.`);
       console.log(`Let's try again, ${userName}!`);
-      return false;
+      return;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-  return true;
 };

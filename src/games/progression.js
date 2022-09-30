@@ -9,27 +9,28 @@ const minLength = 5;
 const maxLength = 10;
 const minStep = 1;
 const maxStep = 10;
-const minRange = 1;
-const maxRange = 20;
+const minStart = 1;
+const maxStart = 20;
 
-const createProgression = () => {
-  const expressionLength = getRandomNumber(minLength, maxLength);
-  const difference = getRandomNumber(minStep, maxStep);
-  const expressionStart = getRandomNumber(minRange, maxRange);
-  const progressions = [expressionStart];
-  for (let i = 1; i < expressionLength; i += 1) {
-    progressions[i] = progressions[i - 1] + difference;
+const createProgression = (length, step, start) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression[i] = start + (step * i);
   }
-  return progressions;
+  return progression;
 };
 
 const generateRound = () => {
-  const progressions = createProgression();
-  const emptyPlaceIndex = getRandomIndex(progressions);
-  const number = progressions[emptyPlaceIndex];
-  progressions[emptyPlaceIndex] = '..';
-  const expectedAnswer = String(number);
-  const question = progressions.join(' ');
+  const length = getRandomNumber(minLength, maxLength);
+  const step = getRandomNumber(minStep, maxStep);
+  const start = getRandomNumber(minStart, maxStart);
+
+  const progression = createProgression(length, step, start);
+
+  const hiddenIndex = getRandomIndex(progression);
+  const expectedAnswer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
 
   return [question, expectedAnswer];
 };
