@@ -2,7 +2,6 @@ import run from '../index.js';
 import { getRandomNumber } from '../helpers.js';
 
 const description = '- /Answer \'yes\' if number even otherwise answer \'no\'./';
-// const b = 'Answer \'yes\' if the number is even otherwise answer \'no\'.';
 const minRange = 0;
 const maxRange = 100;
 

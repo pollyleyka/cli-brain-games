@@ -1,7 +1,6 @@
 import run from '../index.js';
 import { getRandomNumber } from '../helpers.js';
 
-// const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const description = '/Answer \'yes\' if given number is prime. Otherwise answer \'no\'./';
 const minRange = 1;
 const maxRange = 100;
